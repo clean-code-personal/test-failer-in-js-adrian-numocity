@@ -12,8 +12,8 @@ describe('size function', () => {
         expect(tshirts(37)).to.equal('S');
         expect(tshirts(40)).to.equal('M');
         expect(tshirts(43)).to.equal('L');
-        expect(() => tshirts(-20)).to.throw(Error,'Shoulder size cannot be negative');
+        expect(()=>tshirts(-20)).to.throw(Error,'Shoulder size cannot be negative');
         expect(()=>tshirts(38)).to.equal('M');
-        expect(()=>tshirts(100)).to.throw(Error,'Shoulder size exceeds limit')
+        expect(()=>tshirts(100)).to.throw(Error,'Shoulder size exceeds limit');
     });
 });
