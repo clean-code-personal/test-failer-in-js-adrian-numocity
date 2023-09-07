@@ -1,6 +1,5 @@
 const { expect } = require('chai');
-let { networkAlertStub, alertInCelcius } = require('./alerter'); 
-let alertFailureCount = 0;
+let { networkAlertStub, alertInCelcius,alertFailureCount } = require('./alerter'); 
 
 describe('alertInCelcius Function', () => {
     it('should count alert failures', () => {

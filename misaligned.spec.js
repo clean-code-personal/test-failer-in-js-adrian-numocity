@@ -33,13 +33,12 @@ console.log = function (...args) {
     });
 
     it('should return the total number of color combinations', () => {
-        //const result = print_color_map();
         expect(result).to.equal(25);
       
     });
 
     it('Check if pairnumber is calculated correctly', () => {
-        expect(capturedLogs[1]).to.equal(1);
+        expect(capturedLogs[0]).to.equal("1 | White | Blue");
     }); 
 }); 
 

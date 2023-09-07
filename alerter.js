@@ -25,5 +25,5 @@ alertInCelcius(303.6);
 console.log(`${alertFailureCount} alerts failed.`);
 console.log('All is well (maybe!)');
 
-module.exports = { alertInCelcius,networkAlertStub};
+module.exports = {alertInCelcius,networkAlertStub,alertFailureCount};
 
