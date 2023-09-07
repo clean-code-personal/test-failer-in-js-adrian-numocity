@@ -1,19 +1,25 @@
-const { expect } = require('chai');
-//const { captureConsole } = require('jest-console'); // For capturing console output
-
+const {expect} = require('chai');
+const  print_color_map = require('./misaligned.js');
 // Import the print_color_map function
-const {print_color_map} = require('./misaligned.js'); 
+// Redirect console.log to a custom function
+const originalLog = console.log;
+const capturedLogs = [];
+
+console.log = function (...args) {
+    capturedLogs.push(args.join(' '));
+    originalLog.apply(console, args);
+};
+
+//console.log(capturedLogs);
 
  describe('print_color_map Function', () => {
     it('should have aligned "|" characters', () => {
-        // Capture console output
-        const capturedConsole = captureConsole();
-
+        
         // Call the function to print the color map
-        print_color_map();
+        result = print_color_map();
 
         // Get the captured console output
-        const output = capturedConsole.output;
+        const output = capturedLogs;
 
         // Check if the "|" characters are aligned in each line
         for (let k = 0; k < output.length - 1; k++) {
@@ -28,13 +34,13 @@ const {print_color_map} = require('./misaligned.js');
 
     it('should return the total number of color combinations', () => {
         //const result = print_color_map();
-        expect(expect()=>result).to.equal(25);
-        console.log(result);
+        expect(result).to.equal(25);
+      
     });
 
-    it('the last pair number must be 24', () => {
-        expect(()=pairNumber).to.equal(25);
-    });
+    it('Check if pairnumber is calculated correctly', () => {
+        expect(capturedLogs[1]).to.equal(1);
+    }); 
 }); 
 
 
