@@ -10,13 +10,11 @@ console.log = function (...args) {
     originalLog.apply(console, args);
 };
 
-//console.log(capturedLogs);
-
  describe('print_color_map Function', () => {
     it('should have aligned "|" characters', () => {
         
         // Call the function to print the color map
-        result = print_color_map();
+        const result = print_color_map();
 
         // Get the captured console output
         const output = capturedLogs;
