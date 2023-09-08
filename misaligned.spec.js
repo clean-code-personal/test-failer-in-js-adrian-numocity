@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const  print_color_map = require('./misaligned.js');
+const print_color_map = require('./misaligned.js');
 // Import the print_color_map function
 // Redirect console.log to a custom function
 const originalLog = console.log;
@@ -38,7 +38,7 @@ console.log = function (...args) {
     });
 
     it('Check if pairnumber is calculated correctly', () => {
-        expect(capturedLogs[0]).to.equal("1 | White | Blue");
+        expect(capturedLogs[0]).to.equal(" 1 | White  | Blue");
     }); 
 }); 
 

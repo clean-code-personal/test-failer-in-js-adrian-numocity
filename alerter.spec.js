@@ -1,15 +1,18 @@
 const { expect } = require('chai');
-let { networkAlertStub, alertInCelcius,alertFailureCount } = require('./alerter'); 
+const sinon = require('sinon');
+const { networkAlertStub, alertInCelcius, alertFailureCount } = require('./alerter');
 
 describe('alertInCelcius Function', () => {
     it('should count alert failures', () => {
-        // Stub the networkAlertStub function to return a non-ok response (500)
+        // Create a Sinon stub for networkAlertStub
+        const stub = sinon.stub();
+
+        // Replace the networkAlertStub with the Sinon stub
         const originalNetworkAlertStub = networkAlertStub;
-        networkAlertStub = function (celcius) {
-            console.log(`Alert! Temperature is ${celcius} degrees`);
-            // Return 500 for not-ok
-            return 500;
-        };
+        networkAlertStub = stub;
+
+        // Configure the stub to return a non-ok response (500)
+        stub.returns(500);
 
         // Call alertInCelcius with a Fahrenheit temperature
         alertInCelcius(400.5);

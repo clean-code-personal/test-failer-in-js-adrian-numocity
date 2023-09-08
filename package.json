@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "capture-console": "^1.0.1",
-    "jest-console": "^0.1.0"
+    "jest-console": "^0.1.0",
+    "sinon": "^15.2.0"
   }
 }

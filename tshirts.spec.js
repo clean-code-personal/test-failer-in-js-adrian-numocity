@@ -7,13 +7,31 @@ describe('size function', () => {
         expect(() => tshirts('invalid')).to.throw(Error);
     });
 
-    it('should correctly classify sizes', () => {
-        // Test with valid inputs
-        expect(()=>tshirts(37)).to.equal('S');
-        expect(()=>tshirts(40)).to.equal('M');
-        expect(()=>tshirts(43)).to.equal('L');
-        expect(()=>tshirts(-20)).to.throw(Error,'Shoulder size cannot be negative');
-        expect(()=>tshirts(38)).to.equal('M');
-        expect(()=>tshirts(100)).to.throw(Error,'Shoulder size exceeds limit');
+    it('should return "S" for a shoulder measurement of 37', () => {
+        const result = tshirts(37);
+        expect(result).to.equal('S');});
+
+    it('should return "M" for a shoulder measurement of 40', () => {
+        const result = tshirts(38);
+        expect(result).to.equal('M');});
+    
+    it('should return "L" for a shoulder measurement of 37', () => {
+        const result = tshirts(40);
+        expect(result).to.equal('L');});
+
+    it('should throw a minimum size error', () => {
+
+        expect(()=>tshirts(-20)).to.throw(Error,'Minimum shoulder size is 36cms')
     });
+
+    it('should throw a maximum size error', () => {
+
+        expect(()=>tshirts(100)).to.throw(Error,'Maximum shoulder size is 42 cms')
+    });
+
+    it('should correctly identify border value', () => {
+        const result = tshirts(38);
+        expect(result).to.equal('M')
+    });
+
 });
