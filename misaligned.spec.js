@@ -14,7 +14,7 @@ console.log = function (...args) {
     it('should have aligned "|" characters', () => {
         
         // Call the function to print the color map
-        const result = print_color_map();
+        result = print_color_map();
 
         // Get the captured console output
         const output = capturedLogs;

@@ -6,7 +6,7 @@ describe('alertInCelcius Function', () => {
     it('should count alert failures', () => {
         // Create a Sinon stub for networkAlertStub
         const stub = sinon.stub();
-        let networkAlertStub;
+
         // Replace the networkAlertStub with the Sinon stub
         const originalNetworkAlertStub = networkAlertStub;
         networkAlertStub = stub;
@@ -21,6 +21,6 @@ describe('alertInCelcius Function', () => {
         networkAlertStub = originalNetworkAlertStub;
 
         // Assert that alertFailureCount is incremented
-        expect(alertFailureCount).to.equal(originalAlertFailureCount + 1);
+        expect(alertFailureCount).to.equal(1);
     });
 });

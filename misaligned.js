@@ -22,7 +22,7 @@ function print_color_map() {
     return majorColors.length * minorColors.length;
 }
 
-const result = print_color_map();
+
 console.log('All is well (maybe!)');
 
 module.exports = print_color_map;
