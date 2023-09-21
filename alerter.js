@@ -1,4 +1,4 @@
-let alertFailureCount = 0;
+let alertFailure = { count: 0 };
 
 function networkAlertStub(celcius) {
     console.log(`Alert! Temperature is ${celcius} degrees`);
@@ -16,14 +16,14 @@ function alertInCelcius(farenheit, alertFunction = networkAlertStub) {
         // let us keep a count of failures to report
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
-        alertFailureCount += 1;
+        alertFailure.count += 1;
     }
 }
 
 alertInCelcius(400.5);
 alertInCelcius(303.6);
-console.log(`${alertFailureCount} alerts failed.`);
+console.log(`${alertFailure.count} alerts failed.`);
 console.log('All is well (maybe!)');
 
-module.exports = {alertInCelcius,networkAlertStub,alertFailureCount};
+module.exports = { alertInCelcius, networkAlertStub, alertFailure };
 

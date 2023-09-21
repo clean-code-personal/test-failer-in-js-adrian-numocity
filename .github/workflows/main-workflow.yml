@@ -23,4 +23,4 @@ jobs:
         run: "npx mocha misaligned.spec.js"
 
       - name: alerter pass
-        run: "npx mocha alerter1.spec.js"
+        run: "npx mocha alerter.test.js"
